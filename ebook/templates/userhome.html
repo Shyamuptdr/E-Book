@@ -1,0 +1,32 @@
+{% load static %} {% include "userheader.html" %} {% include "usernav.html" %}
+
+<section
+  class="hero-section d-flex justify-content-center align-items-center"
+  id="section_1"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12 mb-5 pb-5 pb-lg-0 mb-lg-0">
+        <h1 class="text-white mb-4">User Panel</h1>
+        <h5 class="text-white  mb-2">Welcome to</h5>
+        <h2 class="text-white  mb-2">{{userDetails.name}}</h2>
+      </div>
+
+      <div class="hero-image-wrap col-lg-6 col-12 mt-3 mt-lg-0">
+        <img
+          src="{% static 'images/education-online-books.png' %}"
+          class="hero-image img-fluid img-center"
+          alt="education online books"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} <div class="col-lg-5 col-12 mx-right custom-form ebook-download-form bg-white shadow mb-5">
+        <div class="text-right mb-3">
+          <h3 class="mb-1">Total Notes</h3> <h6 class="mb-3">{{totalnotes}}</h6>
+      </div>
+  </div> {% endcomment %}
+  
+{% include "footer.html" %}

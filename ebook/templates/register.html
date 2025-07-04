@@ -1,0 +1,114 @@
+{% load static %}
+{% include "header.html" %}
+{% include "regnav.html" %}
+<section
+      class="hero-section d-flex justify-content-center align-items-center"
+      id="section_1"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-12 mx-auto">
+            <form class="custom-form ebook-download-form bg-white shadow" action="/register/"
+              method="post">
+              {% csrf_token %}
+              <div class="text-center mb-5">
+                <h6 class="mb-1">{{output}}</h6>
+                <h2 class="mb-1">Register Here</h2>
+              </div>
+
+              <div class="ebook-download-form-body">
+                
+                {% comment %} NAME {% endcomment %}
+                <div class="input-group mb-4">
+                  <input type="text" name="name" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby = "basic-addon1" placeholder="Enter Your Name" required />
+
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="custom-form-icon bi-person"></i>
+                  </span>
+                </div>
+
+                {% comment %} EMAIL  {% endcomment %}
+                <div class="input-group mb-4">
+                  <input type="text" name="email" id="ebook-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Enter Email" aria-label="ebook-form-email" aria-describedby="basic-addon2" required="" />
+
+                  <span class="input-group-text" id="basic-addon2">
+                    <i class="custom-form-icon bi-envelope"></i>
+                  </span>
+                </div>
+
+                {% comment %} PASSWORD {% endcomment %}
+                <div class="input-group mb-4">
+                  <input type="password" name="password" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby = "basic-addon1" placeholder="Enter Password" required />
+
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="custom-form-icon "></i>
+                  </span>
+                </div>
+
+                {% comment %} MOBILE {% endcomment %}
+                <div class="input-group mb-4">
+                  <input type="text" name="mobile" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby = "basic-addon1" placeholder="Enter Mobile No." required />
+
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="custom-form-icon"></i>
+                  </span>
+                </div>
+
+                {% comment %} ADDRESS {% endcomment %}
+                <div class="input-group mb-4">
+                  <textarea name="address" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby = "basic-addon1" placeholder="Enter Address" required ></textarea>
+
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="custom-form-icon"></i>
+                  </span>
+                </div>
+
+                {% comment %} CITY {% endcomment %}
+                <div class="input-group mb-4">
+                  <select name="city" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby = "basic-addon1" placeholder="Enter City" required>
+                  <option>Select City</option>
+                  <option>Khargone</option>
+                  <option>Indore</option>
+                  <option>Bhopal</option>
+                  <option>Ujjain</option>	
+                  </select>
+
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="custom-form-icon"></i>
+                  </span>
+                </div>
+
+                {% comment %} GENDER {% endcomment %}
+                <div class="input-group mb-4">
+                  {% comment %} <select name="genter" id="ebook-form-name" class="form-control" aria-label="ebook-form-name" aria-describedby = "basic-addon1" placeholder="Enter Gender"> {% endcomment %}
+
+                  Male &nbsp; <input type="radio" name="gender" value="male"/>
+		              &nbsp;&nbsp;
+		              Female &nbsp; <input type="radio" name="gender" value="female"/>
+
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="custom-form-icon"></i>
+                  </span>
+                </div>
+
+                {% comment %} BUTTON {% endcomment %}
+                <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                  <button type="submit" class="form-control" value="register">
+                    Register
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="hero-image-wrap col-lg-6 col-12 mt-3 mt-lg-0">
+            <img
+              src="{% static 'images/education-online-books.png' %}"
+              class="hero-image img-fluid"
+              alt="education online books"
+            />
+          </div>
+        </div>
+      </div>
+</section>
+
+{% include "footer.html" %}

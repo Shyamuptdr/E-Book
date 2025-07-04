@@ -1,0 +1,78 @@
+{% load static %} {% include "adminheader.html" %}
+{% include "adminnav.html" %}
+
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous">
+
+<section class="hero-section d-flex justify-content-center align-items-center"
+      id="section_1">
+      <div class="container">
+    <div class="row">
+      <div class="col-lg-200 col-200 mx-auto custom-form ebook-download-form bg-white shadow text-center mb-5">
+
+
+
+<center><h2>View and manage users Details</h2></br></center>
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+<th scope="col">RegID</th>
+<th scope="col">Name</th>
+<th scope="col">Email</th>
+<th scope="col">password</th>
+<th scope="col">Mobile</th>
+<th scope="col">Address</th>
+<th scope="col">City</th>
+<th scope="col">Gender</th>
+<th scope="col">Info</th>    
+<th scope="col">Status</th>
+<th scope="col">Action</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr>
+{% for row in userDetails %}
+<tr>
+<th scope="col">{{row.regid}}</th>
+<td>{{row.name}}</td>
+<td>{{row.email}}</td>
+<td>{{row.password}}</td>
+<td>{{row.mobile}}</td>
+<td>{{row.address}}</td>
+<td>{{row.city}}</td>
+<td>{{row.gender}}</td>
+<td>{{row.info}}</td>    
+<td>
+{% if row.status %}
+<font color="green">Active</font>
+{% else %}
+<font color="orange">InActive</font>
+{% endif %}    
+</td>
+<td>
+{% if row.status %}
+<a href="/manageuserstatus/?s=inactive&regid={{row.regid}}">Change Status</a>
+{% else %}
+<a href="/manageuserstatus/?s=active&regid={{row.regid}}">Change Status</a>
+{% endif %}    
+<a href="/manageuserstatus/?s=delete&regid={{row.regid}}" style="color:red;">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</tr>
+</tbody>
+</table>
+      </div>
+    </div>
+  </div>    
+</section>
+
+
+{% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> {% endcomment %}
+
+
+
+  {% include "footer.html" %}

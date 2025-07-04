@@ -1,0 +1,87 @@
+{% load static %} 
+{% include "userheader.html" %} 
+
+{% include "usernav.html" %}
+
+
+<section
+  class="hero-section d-flex justify-content-center align-items-center"
+  id="section_1"
+>
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-lg-5 col-12 mx-auto custom-form ebook-download-form bg-white shadow text-center mb-5"
+      >
+        <div class="text-center">
+          <h2 class="mb-1">My Profile</h2>
+        </div>
+              <img
+                src="{% static 'images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg' %}"
+                class="img-fluid avatar-image shadow "
+                alt=""
+              />
+        <br /><br />
+        <table class="table table-striped table-hover">
+          <thead></thead>
+          <tbody>
+            <tr>
+              <th scope="col">RegID</th>
+              <th scope="col">{{user.regid}}</th>
+            </tr>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">{{user.name}}</th>
+            </tr>
+            <tr>
+              <th scope="col">Email</th>
+              <th scope="col">{{user.email}}</th>
+            </tr>
+
+            {% comment %}
+            <tr>
+              <th scope="col">password</th>
+              <th scope="col">{{userDetails.password}}</th>
+            </tr>
+            {% endcomment %}
+
+            <tr>
+              <th scope="col">Mobile</th>
+              <th scope="col">{{user.mobile}}</th>
+            </tr>
+            <tr>
+              <th scope="col">Address</th>
+              <th scope="col">{{user.address}}</th>
+            </tr>
+            <tr>
+              <th scope="col">City</th>
+              <th scope="col">{{user.city}}</th>
+            </tr>
+            <tr>
+              <th scope="col">Gender</th>
+              <th scope="col">{{user.gender}}</th>
+            </tr>
+            <tr>
+              <th scope="col">Info</th>
+              <th scope="col">{{user.info}}</th>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="d-none d-lg-block">
+        <a
+          href="/epusers/"
+          class="btn custom-btn custom-border-btn btn-naira btn-inverted">
+          <i class="btn-icon bi-person"></i>
+          <span>Edit Profile</span
+          >
+        </a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "footer.html" %}
